@@ -1,4 +1,6 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico');
+
+.App  {
   text-align: center;
 }
 
@@ -8,14 +10,18 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #0B0A07;
+  /* background-color: rgb(100, 5, 5); */
   height: 150px;
   padding: 20px;
-  color: white;
+  /* color: white; */
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Indie Flower', cursive;
+  color: #61DAFB;
 }
 
 .App-intro {
@@ -25,4 +31,26 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.squares {
+  border: 1px solid black;
+  width: 5em;
+  background: silver;
+  margin: 1px;
+}
+
+.square_container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 5em;
+}
+
+.intro {
+  background-color: #61DAFB;
+}
+
+.squares:hover {
+  background: red;
 }

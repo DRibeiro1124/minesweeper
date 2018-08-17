@@ -27,17 +27,17 @@ class Minesweeper extends Component {
 
     render() {
         return (
-            <div>
+            <div className="intro">
                currently playing    {this.state.game.id}
 
                {this.state.game.board.map((row, i) => {
                    console.log("row", row, i)
                    return (
-                       <div>
+                       <div className="square_container">
                            {row.map((col, j) => {
                                return <span className="squares">
                                 {this.state.game.board [i][j]}
-                                is at
+                                {/* is at */}
                                {`${i}, ${j}`} 
                                </span>
                            })}
@@ -51,3 +51,7 @@ class Minesweeper extends Component {
 }
 
 export default Minesweeper;
+
+
+
+
