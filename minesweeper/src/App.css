@@ -37,6 +37,10 @@
   width: 5em;
   background:darkgray;
   margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }
 
 .square_container {
@@ -67,6 +71,6 @@
 }
 
 .game_difficulty_option {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  padding: 2em 0 2em 0;
 }
+
