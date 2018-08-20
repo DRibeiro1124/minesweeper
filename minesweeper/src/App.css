@@ -19,7 +19,6 @@
 
 .App-title {
   font-size: 3em;
-  /* font-family: 'Pacifico', cursive; */
   font-family: 'Indie Flower', cursive;
   color: #61DAFB;
 }
@@ -36,7 +35,7 @@
 .squares {
   border: 1px solid black;
   width: 5em;
-  background: silver;
+  background:darkgray;
   margin: 1px;
 }
 
@@ -52,5 +51,22 @@
 }
 
 .squares:hover {
-  background: red;
+  background-image: url(./images/blueSmiley.png);
+  /* background-image: url(./images/com.grassypastures.icosmiley.png); */
+  /* background-image: url(./images/smileyface.jpeg); */
+  background: dodgerblue;
+  background-size: 100%
+}
+
+.intro_game {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pacifico', cursive;
+  color: black;
+  font-size: 20px;
+}
+
+.game_difficulty_option {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }

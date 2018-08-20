@@ -7,7 +7,9 @@ class Minesweeper extends Component {
         super(props);
         this.state = {
             game: {
-                board: []
+            board: [],
+            gameId: '',
+            difficulty: 0,
             }
         }
     }
@@ -15,41 +17,58 @@ class Minesweeper extends Component {
     componentDidMount() {
         fetch(BASE_URL, {
             method: "POST",
-            body: JSON.stringify({ difficulty: 0})
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+              },
         }).then(resp => resp.json())
         .then(newGame => {
-            console.log("game", newGame);
+            console.log("game", newGame,);
             this.setState({
                 game: newGame
             })
         })
     }
+            //Ask Mark about this... cant' figure it out
+    // gameDifficulty() {
+    //    fetch(BASE_URL, {
+    //        method: "POST",s
+    //        body: JSON.stringify({ difficulty: 0})
+    //     }).then(resp => resp.json())
+    //     .then(difficulty => {
+    //         console.log("difficulty", newLevel);
+    //         this.setState({
+    //             difficulty: newLevel
+    //         })
+    //     })
+    // }
 
     render() {
         return (
             <div className="intro">
-               currently playing    {this.state.game.id}
-
-               {this.state.game.board.map((row, i) => {
-                   console.log("row", row, i)
+               <span className="intro_game">currently playing:
+               </span>   {this.state.game.id}
+               <section className="game_difficulty_option">
+                <select>
+                    <option value="0">Beginner</option>
+                    <option value="1">Intermediate</option>
+                    <option value="2">Expert</option>
+                 </select>
+                </section>
+               {this.state.game.board.map((row, i)  => {
                    return (
-                       <div className="square_container">
+                       <div  key={i} className="square_container">
                            {row.map((col, j) => {
-                               return <span className="squares">
-                                {this.state.game.board [i][j]}
-                                {/* is at */}
-                               {`${i}, ${j}`} 
-                               </span>
+                            return <span key={j} className="squares">
+                            {this.state.game.board[i][j]} 
+                            </span>
                            })}
                        </div>
                    )
-                   return
                })} 
             </div>
         );
     }
 }
-
 export default Minesweeper;
 
 
